@@ -3,8 +3,8 @@ import mysql.connector
 def create_database():
     db = mysql.connector.connect(
         host="localhost",
-        user="nkarapet",
-        password="qwerty0123456789"
+        user="your_username",
+        password="your_password"
     )
     cursor = db.cursor()
     cursor.execute("CREATE DATABASE IF NOT EXISTS game_db")
@@ -22,8 +22,8 @@ def connect_db():
     try:
         return mysql.connector.connect(
             host="localhost",
-            user="nkarapet",
-            password="qwerty0123456789",
+            user="your_username",
+            password="your_password",
             database="game_db"
         )
     except mysql.connector.Error as err:

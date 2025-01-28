@@ -14,6 +14,9 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Go, Go, Run!")
 clock = pygame.time.Clock()
 
+player_img = pygame.image.load("assets/player.png")
+player_img = pygame.transform.scale(player_img, (50, 50))
+
 def main():
     running = True
     score = 0
@@ -67,7 +70,7 @@ def main():
                 objects.clear()
                 break
 
-            pygame.draw.rect(screen, BLACK, player)
+            screen.blit(player_img, (player.x, player.y))
             for obj in objects:
                 pygame.draw.rect(screen, obj["color"], obj["rect"])
 
